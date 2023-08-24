@@ -27,7 +27,6 @@ export const Header = () => {
     <>
       <HeaderElement data-cy="header">
         <StyledLink to={AppPages.RootPage}>
-          <Logo />
         </StyledLink>
 
         <StyledNavItems>

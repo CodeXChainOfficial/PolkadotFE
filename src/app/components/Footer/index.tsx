@@ -18,7 +18,6 @@ export const Footer: FC = () => {
       <LinkWrapper columnGap={"32px"} flexWrap="wrap" rowGap="10px">
         <FooterLink>
           <NavLink to={AppPages.RootPage}>
-            <Logo />
           </NavLink>
         </FooterLink>
       </LinkWrapper>
