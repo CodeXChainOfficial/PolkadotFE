@@ -1,0 +1,667 @@
+{
+  "buildInfo": {
+    "rustc": {
+      "version": "1.73.0-nightly",
+      "commitHash": "903e279f468590fa3425f8aff7f3d61a5a873dbb",
+      "commitDate": "2023-07-18",
+      "channel": "Nightly",
+      "short": "rustc 1.73.0-nightly (903e279f4 2023-07-18)"
+    },
+    "contractCrate": {
+      "name": "xn-main",
+      "version": "0.0.1"
+    },
+    "framework": {
+      "name": "multiversx-sc",
+      "version": "0.39.8"
+    }
+  },
+  "name": "XnMain",
+  "constructor": {
+    "inputs": [
+      {
+        "name": "oracle_address",
+        "type": "Address"
+      }
+    ],
+    "outputs": []
+  },
+  "endpoints": [
+    {
+      "name": "issue_and_set_all_roles",
+      "onlyOwner": true,
+      "mutability": "mutable",
+      "payableInTokens": ["EGLD"],
+      "inputs": [
+        {
+          "name": "token_display_name",
+          "type": "bytes"
+        },
+        {
+          "name": "token_ticker",
+          "type": "bytes"
+        },
+        {
+          "name": "num_decimals",
+          "type": "u32"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "register_domain",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "period",
+          "type": "u8"
+        },
+        {
+          "name": "unit",
+          "type": "PeriodType"
+        },
+        {
+          "name": "assign_to",
+          "type": "optional<Address>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "extend_domain",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "period",
+          "type": "u8"
+        },
+        {
+          "name": "unit",
+          "type": "PeriodType"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_domain_overview",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "args",
+          "type": "multi<bytes,bytes,bytes,bytes,bytes>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_domain_socials",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "args",
+          "type": "multi<bytes,bytes,bytes,bytes,bytes,bytes>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_domain_wallets",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "args",
+          "type": "multi<bytes,bytes,bytes>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_domain_textrecord",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "text_record",
+          "type": "variadic<TextRecord>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_primary_address",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "register_sub_domain",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "sub_domain",
+          "type": "bytes"
+        },
+        {
+          "name": "address",
+          "type": "Address"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "migrate_domain",
+      "mutability": "mutable",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_key_value",
+      "mutability": "mutable",
+      "payableInTokens": ["ESDT"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "key",
+          "type": "bytes"
+        },
+        {
+          "name": "value",
+          "type": "optional<bytes>",
+          "multi_arg": true
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "transfer_domain",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "new_owner",
+          "type": "Address"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "remove_sub_domain",
+      "mutability": "mutable",
+      "payableInTokens": ["*"],
+      "inputs": [
+        {
+          "name": "sub_domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "set_reservations",
+      "onlyOwner": true,
+      "mutability": "mutable",
+      "inputs": [
+        {
+          "name": "reservations",
+          "type": "List<Reservation>"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "clear_reservations",
+      "onlyOwner": true,
+      "mutability": "mutable",
+      "inputs": [
+        {
+          "name": "domain_names",
+          "type": "List<bytes>"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "update_price_usd",
+      "onlyOwner": true,
+      "mutability": "mutable",
+      "inputs": [
+        {
+          "name": "domain_length",
+          "type": "u64"
+        },
+        {
+          "name": "yearly_rent_usd",
+          "type": "u64"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "fetch_egld_usd_prices",
+      "onlyOwner": true,
+      "mutability": "mutable",
+      "inputs": [],
+      "outputs": []
+    },
+    {
+      "name": "get_domain_nft_id",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "TokenIdentifier"
+        }
+      ]
+    },
+    {
+      "name": "get_reservation",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Reservation"
+        }
+      ]
+    },
+    {
+      "name": "get_domain_nft",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "TokenIdentifier"
+        }
+      ]
+    },
+    {
+      "name": "get_domain",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Domain"
+        }
+      ]
+    },
+    {
+      "name": "get_sub_domains",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "variadic<multi<bytes,SubDomain>>",
+          "multi_result": true
+        }
+      ]
+    },
+    {
+      "name": "get_main_domain",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "Address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "resolve",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Address"
+        }
+      ]
+    },
+    {
+      "name": "resolve_domain_name_key",
+      "mutability": "readonly",
+      "inputs": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "key",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "get_prices_usd",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "RentalFee"
+        }
+      ]
+    },
+    {
+      "name": "get_egld_usd_price",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "get_allowed_top_level_domains",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "variadic<bytes>",
+          "multi_result": true
+        }
+      ]
+    },
+    {
+      "name": "get_migration_start_time",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "get_royalties",
+      "mutability": "readonly",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "hasCallback": true,
+  "types": {
+    "Domain": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "name": "expires_at",
+          "type": "u64"
+        },
+        {
+          "name": "nft_nonce",
+          "type": "u64"
+        },
+        {
+          "name": "profile",
+          "type": "Option<Profile>"
+        },
+        {
+          "name": "social_media",
+          "type": "Option<SocialMedia>"
+        },
+        {
+          "name": "wallets",
+          "type": "Option<Wallets>"
+        },
+        {
+          "name": "text_record",
+          "type": "Option<List<TextRecord>>"
+        }
+      ]
+    },
+    "PeriodType": {
+      "type": "enum",
+      "variants": [
+        {
+          "name": "Year",
+          "discriminant": 0
+        },
+        {
+          "name": "Month",
+          "discriminant": 1
+        },
+        {
+          "name": "Day",
+          "discriminant": 2
+        },
+        {
+          "name": "Hour",
+          "discriminant": 3
+        },
+        {
+          "name": "Minute",
+          "discriminant": 4
+        }
+      ]
+    },
+    "Profile": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "name": "avatar",
+          "type": "bytes"
+        },
+        {
+          "name": "location",
+          "type": "bytes"
+        },
+        {
+          "name": "website",
+          "type": "bytes"
+        },
+        {
+          "name": "shortbio",
+          "type": "bytes"
+        }
+      ]
+    },
+    "RentalFee": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "one_letter",
+          "type": "u64"
+        },
+        {
+          "name": "two_letter",
+          "type": "u64"
+        },
+        {
+          "name": "three_letter",
+          "type": "u64"
+        },
+        {
+          "name": "four_letter",
+          "type": "u64"
+        },
+        {
+          "name": "other",
+          "type": "u64"
+        }
+      ]
+    },
+    "Reservation": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "domain_name",
+          "type": "bytes"
+        },
+        {
+          "name": "until",
+          "type": "u64"
+        },
+        {
+          "name": "reserved_for",
+          "type": "Address"
+        }
+      ]
+    },
+    "SocialMedia": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "telegram",
+          "type": "bytes"
+        },
+        {
+          "name": "discord",
+          "type": "bytes"
+        },
+        {
+          "name": "twitter",
+          "type": "bytes"
+        },
+        {
+          "name": "medium",
+          "type": "bytes"
+        },
+        {
+          "name": "facebook",
+          "type": "bytes"
+        },
+        {
+          "name": "other_link",
+          "type": "bytes"
+        }
+      ]
+    },
+    "SubDomain": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "name": "address",
+          "type": "Address"
+        }
+      ]
+    },
+    "TextRecord": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "name_value",
+          "type": "bytes"
+        },
+        {
+          "name": "link",
+          "type": "bytes"
+        }
+      ]
+    },
+    "Wallets": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "egld",
+          "type": "bytes"
+        },
+        {
+          "name": "btc",
+          "type": "bytes"
+        },
+        {
+          "name": "eth",
+          "type": "bytes"
+        }
+      ]
+    }
+  }
+}

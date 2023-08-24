@@ -1,0 +1,170 @@
+:root {
+  /* Constant Color Codes */
+  --cyan: #23f7dd;
+  --cyan2: #99f6e4;
+  --cyanHover: #09e5ca;
+
+  --purple: #9664f7;
+  --black: #000000;
+  --graywhite: #f5f7f9;
+  --white: #ffffff;
+  --orange: #fb923c;
+
+  --red400: #f87171;
+  --red500: #dc2626;
+
+  --green: #12a366;
+  --green400: #4ade80;
+  --green500: #22c55e;
+
+  --yellow: #fbc63c;
+  --yellow400: #facc15;
+  --yellow500: #eab308;
+
+  --teal600: #099887;
+  --teal900: #134e48;
+
+  --shades200: #87eec7;
+
+  --light200: #fafbfc;
+
+  --gradient1: linear-gradient(
+    221.4deg,
+    #23ff7b 11.22%,
+    #23ff7b 11.22%,
+    #23ff7b 32.71%,
+    #34b1cd 49.01%,
+    #a855ff 62.38%,
+    #da45ff 90.08%
+  );
+
+  /* Dark Mode Variable Color Codes */
+  --neutral0: #000000;
+  --neutral50: #fafafa;
+  --neutral100: #f5f5f5;
+  --neutral200: #e5e5e5;
+  --neutral300: #d4d4d4;
+  --neutral400: #a3a3a3;
+  --neutral500: #737373;
+  --neutral600: #525252;
+  --neutral700: #404040;
+  --neutral800: #262626;
+  --neutral900: #171717;
+}
+
+/* Light Mode Variable Color Codes */
+/* Note: Light Mode Colors will go here.. */
+/* .light {
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: var(--neutral50);
+  background-color: var(--neutral900);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/*vertical Track */
+
+::-webkit-scrollbar-track:vertical {
+  /* box-shadow: inset 0 0 3px grey; */
+  border-radius: 10px;
+  /* background-color: var(--black); */
+}
+
+/*vertical Handle */
+
+::-webkit-scrollbar-thumb:vertical {
+  border-radius: 10px;
+  background-color: #98fe99;
+}
+
+/*horizontal Track */
+
+::-webkit-scrollbar-track:horizontal {
+  /* box-shadow: inset 0 0 3px grey; */
+  background-color: #98fe99;
+  border-radius: 10px;
+}
+
+/*horizontal Handle */
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: var(--black);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  /* background: var(--black); */
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.dapp-core-component__dappModalStyles__dappModalBody {
+  background-color: var(--black);
+}
+
+.dapp-core-component__dappModalStyles__dappModalCloseButton {
+  background-color: var(--black);
+}
+
+.dapp-core-component__main__icon-state svg path {
+  fill: var(--cyan);
+}
+
+.dapp-core-component__transactionToast-styles__content svg path {
+  color: rgb(19, 16, 16);
+}
+
+.dapp-core-component__main__btn-primary {
+  background-color: var(--cyan);
+  border: var(--cyan);
+}
+
+.dapp-core-component__main__btn-primary :hover {
+  background-color: var(--cyan);
+}
+
+.dapp-transaction-toast {
+  background-color: var(--neutral500) !important;
+}
+
+.dapp-core-component__transactionsToastList-styles__toasts.dapp-core-component__transactionsToastList-styles__toastWrapper {
+  background-color: var(--neutral500) !important;
+}
