@@ -1,4 +1,4 @@
-# MultiversX (MVX) Dapp (Frontend)
+# Substrate Dapp (Frontend)
 
 # Project setup prerequisites
 
